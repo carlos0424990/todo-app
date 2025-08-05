@@ -16,10 +16,6 @@ import PublicOnlyRoute from "./components/PublicOnlyRoute";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    Component: RedirectHome,
-  },
-  {
     path: "/login",
     element: <PublicOnlyRoute >
       <Login />
@@ -36,6 +32,10 @@ const router = createBrowserRouter([
     element: <ProtectedRoute>
       <Todos />
     </ProtectedRoute>,
+  },
+  {
+    path: "*",
+    Component: RedirectHome,
   },
 ]);
 
